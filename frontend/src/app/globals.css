@@ -1,0 +1,390 @@
+:root {
+  --ink: #1a1a1a;
+  --ink-muted: #5f6470;
+  --rule: #dcdfe6;
+  --surface: #f4f4f2;
+  --paper: #ffffff;
+  --accent: #1c4f8b;
+  --warning: #8a5a00;
+  --ui-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --doc-font: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--ui-font);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.4rem;
+  line-height: 1.25;
+}
+
+.muted {
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.warning {
+  color: var(--warning);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------- chrome -- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header h1 {
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+.disclaimer {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-align: right;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 26rem) 1fr;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .disclaimer {
+    text-align: left;
+  }
+}
+
+.pane-header {
+  margin-bottom: 1rem;
+}
+
+.pane-header h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+.pane-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.download {
+  padding: 0.55rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.download:hover {
+  background: #16406f;
+}
+
+/* ------------------------------------------------------------------ form -- */
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 0.4rem;
+  font-weight: 600;
+}
+
+.field {
+  display: block;
+  margin-top: 0.85rem;
+}
+
+.field:first-of-type {
+  margin-top: 0;
+}
+
+.field-label {
+  display: block;
+  font-weight: 500;
+}
+
+.field-hint {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.choice input[type="radio"] {
+  margin: 0;
+}
+
+.years {
+  width: 4.5rem;
+}
+
+.years:disabled {
+  background: var(--surface);
+  color: var(--ink-muted);
+}
+
+/* -------------------------------------------------------------- document -- */
+
+.document-frame {
+  overflow-x: auto;
+}
+
+.document {
+  max-width: 46rem;
+  padding: 3rem 3.25rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06);
+  font-family: var(--doc-font);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.document-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.document h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.document-note {
+  margin: 1rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.document h2 {
+  margin: 2rem 0 1rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+}
+
+.clause {
+  margin-bottom: 1.1rem;
+}
+
+.clause h3 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-family: var(--ui-font);
+}
+
+.clause p {
+  margin: 0 0 0.4rem;
+}
+
+.preserve-lines {
+  white-space: pre-wrap;
+}
+
+.signature-intro {
+  margin: 1.75rem 0 1rem;
+}
+
+.signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.signature-column h4 {
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--ui-font);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+
+.signature-column dl {
+  margin: 0;
+}
+
+.signature-column dt {
+  margin-top: 0.7rem;
+  font-family: var(--ui-font);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+.signature-column dd {
+  margin: 0.1rem 0 0;
+}
+
+.signature-line {
+  height: 1.4rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.standard-terms ol {
+  padding-left: 1.4rem;
+}
+
+.standard-terms li {
+  margin-bottom: 0.9rem;
+}
+
+/* Defined terms that the Standard Terms carry over from the Cover Page. */
+.standard-terms .coverpage_link {
+  font-style: italic;
+}
+
+.attribution {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--ui-font);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+/* ----------------------------------------------------------------- print -- */
+
+@media print {
+  /* Print the agreement alone: no form, no site chrome, no shadows. */
+  body {
+    background: #fff;
+  }
+
+  .site-header,
+  .pane-form,
+  .pane-header {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+    padding: 0;
+  }
+
+  /* The preview's horizontal scroll container would make the document a single
+     unfragmentable box, clipping it to one page and cancelling the page break
+     below. Printing wants it laid out normally. */
+  .document-frame {
+    overflow: visible;
+  }
+
+  .document {
+    max-width: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 11pt;
+  }
+
+  /* Start the Standard Terms on their own page, as the published agreement
+     does, and keep signature columns from splitting across a page break. */
+  .page-break {
+    break-before: page;
+  }
+
+  .signatures,
+  .signature-column,
+  .clause {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@page {
+  margin: 20mm;
+}
